@@ -1,4 +1,4 @@
-﻿interface:
+interface:
   display_name: "期末复习系统"
   short_description: "把课程资料转成计划、复习资料、练习题、错题和生词闭环的通用期末复习工作流。"
   default_prompt: "Use $final-exam-review-system to build a module-by-module final exam review plan and generate bilingual study materials, MCQs, and mistake logs."
