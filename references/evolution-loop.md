@@ -6,11 +6,14 @@ Use this reference when the user wants the review system to keep improving acros
 
 After each module or practice round, update:
 
+- `review-plan.md`: current phase, current module, completed/pending task states, and next action.
 - `mistake-log.md`: wrong question, wrong answer, correct answer, tested point, why wrong, memory hook, and similar trap.
 - `vocab-log.md`: unfamiliar English term, Chinese meaning, exam reaction, context, and memory hook.
 - `weak-points.md`: weak concept, evidence, repair action, and retest date.
 - `teacher-style.md`: recurring stem wording, distractor design, repeated knowledge areas, and difficulty.
 - `evolution-notes.md`: what should change in the next module's notes or practice questions.
+
+Do not rebuild the whole review plan after every practice round. Update only the status fields and next action unless the user's deadline, scope, teacher hints, or available materials changed.
 
 ## Review Adjustment Rules
 

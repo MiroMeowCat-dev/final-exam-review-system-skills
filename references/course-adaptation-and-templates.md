@@ -57,6 +57,16 @@ Language-heavy courses:
 ```markdown
 # Review Plan
 
+## Current Status
+- Mode: starting new plan / continuing existing plan / updating existing plan
+- Last updated:
+- Current phase:
+- Current module:
+- Completed:
+- In progress:
+- Next action:
+- Reason for plan update:
+
 ## Source Inventory
 | Source | Modules | Visual-heavy? | Teacher hints | Notes |
 |---|---:|---|---|---|
@@ -67,8 +77,8 @@ Language-heavy courses:
 3. 
 
 ## Module Schedule
-| Day | Module | Goal | Output | Practice | Checkpoint |
-|---|---|---|---|---|---|
+| Day | Module | Status | Goal | Output | Practice | Checkpoint |
+|---|---|---|---|---|---|---|
 
 ## Priority
 - High:
@@ -77,6 +87,8 @@ Language-heavy courses:
 
 ## Next Action
 ```
+
+Use `planned`, `in_progress`, `done`, `needs_retest`, or `blocked` for status. When resuming, read `Current Status` first, then inspect logs and module files only as needed to confirm the next action.
 
 ## Module Notes Template
 

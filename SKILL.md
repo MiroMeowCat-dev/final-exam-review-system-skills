@@ -19,6 +19,17 @@ Turn raw course materials into a closed-loop exam-review system:
 Default to supporting a Chinese-speaking student preparing for an English multiple-choice final exam unless the user specifies another exam format.
 When a course includes Python or programming teaching content, treat it as a likely high-priority area until the actual materials and teacher hints prove otherwise.
 
+## Session Start State Check
+
+Before doing intake or planning, determine the current review state from the user's course folder and prior artifacts:
+
+1. No usable `review-plan.md`: start from intake, read the source inventory, then create the first detailed review plan.
+2. Existing `review-plan.md` with pending items: read the plan, module notes, mistake log, vocabulary log, weak-point file, and teacher-style file if present; continue the next unfinished task instead of rebuilding the plan.
+3. Existing plan plus new materials or changed deadline: update the plan minimally, record what changed, then continue from the revised next action.
+4. Existing plan but unclear progress: infer progress from completed module files, PDFs, logs, and timestamps; ask at most one concise clarification only if the next step cannot be safely inferred.
+
+State the mode before acting: `starting new plan`, `continuing existing plan`, or `updating existing plan`. Treat `review-plan.md` as the source of truth once it exists unless the user explicitly asks to restart.
+
 ## Intake
 
 Start by locating all available materials and making a source inventory:
@@ -43,13 +54,14 @@ Images are evidence, not decoration. Keep only a few genuinely useful images in 
 
 ## Planning Workflow
 
-After the first full pass, create a review plan before generating detailed materials:
+Create a review plan only when the state check shows there is no usable plan, or when the existing plan must be revised because the scope, deadline, or available materials changed. After the first full pass, create or update the plan before generating detailed materials:
 
 1. Course map: modules, major concepts, dependency order, exam-likely areas, and low-priority areas.
 2. Pacing: divide available days into knowledge-building, module practice, teacher-question practice, weak-point repair, and final simulation.
 3. Module plan: for each module, list source files, expected outputs, difficulty, and what must be practiced.
 4. Subject priority: for Python/programming modules, explicitly plan concept understanding, code-output practice, easy-error repair, and data-structure/chart-selection questions.
 5. Compression rule: make early modules more explanatory when the user's logic is not established; make later review increasingly focused on teacher style, mistakes, and high-yield traps.
+6. Continuation rule: mark completed, in-progress, and pending tasks so future sessions can resume without re-planning.
 
 Read `references/course-adaptation-and-templates.md` when adapting the workflow to a specific subject or when the user asks for concrete output templates.
 
@@ -95,7 +107,7 @@ Use teacher review questions only after the knowledge base is established unless
 
 Maintain course-specific files in the user's chosen course folder when doing real review work:
 
-- `review-plan.md`: source inventory, timeline, module order, and daily tasks.
+- `review-plan.md`: source inventory, current status, timeline, module order, task states, and next action.
 - `teacher-style.md`: teacher review-question patterns, wording, repeated traps, and priority areas.
 - `modules/<module-name>.md`: module notes and practice set.
 - `mistake-log.md`: wrong questions and why they happened.
