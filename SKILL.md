@@ -97,11 +97,33 @@ After each module:
 1. Give a small, high-quality MCQ set that covers the main exam points.
 2. Ask the user to send answers, circled wrong questions, screenshots, or uncertain words.
 3. Grade answers with concise reasoning.
-4. Append mistakes to the mistake log.
-5. Append unknown or high-value words to the vocabulary log.
+4. Append mistakes to the mistake log with categories.
+5. Append unknown or high-value words to the vocabulary log with professional-vs-ordinary classification.
 6. Identify weak points and generate targeted repair notes, same-type variant questions, or follow-up questions.
 
 Use teacher review questions only after the knowledge base is established unless the user asks otherwise. When teacher questions are available, analyze style, repeated concepts, wording patterns, difficulty, and distractor design before generating simulations.
+
+## Mistake And Vocabulary Classification
+
+Classify every logged wrong question by the main reason it happened:
+
+- Concept/definition.
+- Mechanism/sequence.
+- Comparison/confusion pair.
+- Visual, graph, table, pathway, or code screenshot interpretation.
+- Code output, data structure, chart choice, or programming behavior.
+- English stem wording such as `NOT`, `except`, `most likely`, `best describes`, or `which statement is true`.
+- Professional terminology.
+- Ordinary vocabulary.
+- Careless reading, time pressure, or answer strategy.
+
+Classify every unknown word or term before explaining it:
+
+- Professional term: course-specific concept, process, structure, method, function, receptor, pathway, data structure, statistical term, programming concept, theory, or named framework. Record it separately with detailed Chinese explanation, related concepts, exam wording, common traps, and memory hook.
+- Ordinary word: general English word that only affects reading comprehension. Record a short common meaning, the meaning in this question, and a quick recognition cue; do not over-explain it like a course concept.
+- Exam-stem phrase: recurring test instruction or wording pattern. Record how to react in MCQs, especially for negative wording and comparison prompts.
+
+If a word can be both ordinary and professional, classify it by its role in the course and the question. For example, `function` is ordinary in general English but professional in programming or physiology when it is tested as a concept.
 
 ## Persistent Course Artifacts
 
@@ -110,8 +132,8 @@ Maintain course-specific files in the user's chosen course folder when doing rea
 - `review-plan.md`: source inventory, current status, timeline, module order, task states, and next action.
 - `teacher-style.md`: teacher review-question patterns, wording, repeated traps, and priority areas.
 - `modules/<module-name>.md`: module notes and practice set.
-- `mistake-log.md`: wrong questions and why they happened.
-- `vocab-log.md`: English terms, Chinese meaning, exam reaction, and memory hook.
+- `mistake-log.md`: categorized wrong questions and why they happened.
+- `vocab-log.md`: categorized professional terms, ordinary words, and exam-stem phrases.
 - `weak-points.md`: current weak modules and next repair actions.
 - `evolution-notes.md`: lessons learned that should improve future modules or future courses.
 - `pdf/`: rendered module notes, mistake-log PDFs, vocabulary PDFs, and final review PDFs when requested.
