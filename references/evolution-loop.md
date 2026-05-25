@@ -8,7 +8,7 @@ After each module or practice round, update:
 
 - `review-plan.md`: current phase, current module, completed/pending task states, and next action.
 - `mistake-log.md`: wrong question, wrong answer, correct answer, tested point, why wrong, memory hook, and similar trap.
-- `vocab-log.md`: unfamiliar English term, Chinese meaning, exam reaction, context, and memory hook.
+- `vocab-log.md`: classified professional terms, ordinary words, and exam-stem phrases with the right explanation depth.
 - `weak-points.md`: weak concept, evidence, repair action, and retest date.
 - `teacher-style.md`: recurring stem wording, distractor design, repeated knowledge areas, and difficulty.
 - `evolution-notes.md`: what should change in the next module's notes or practice questions.
@@ -18,9 +18,21 @@ Do not rebuild the whole review plan after every practice round. Update only the
 ## Review Adjustment Rules
 
 If mistakes are mostly vocabulary:
-- Add recognition drills and bilingual keyword tables.
-- Put English terms closer to Chinese explanations.
-- Use question stems that repeat the same term in different wording.
+- Separate professional terminology from ordinary vocabulary before adding drills.
+- For professional terms, add detailed Chinese explanation, related concepts, exam wording, common traps, and memory hooks.
+- For ordinary words, keep short common meanings and quick recognition cues.
+- Put English terms closer to Chinese explanations in module notes.
+- Use question stems that repeat the same term or phrase in different wording.
+
+If mistakes are mostly professional terminology:
+- Rebuild the module's keyword table around the tested concept, not just the English word.
+- Add comparison rows for similar professional terms.
+- Generate MCQs that test definition, function, location, mechanism, and application of the term.
+
+If mistakes are mostly ordinary vocabulary:
+- Add a compact ordinary-word list for the current module.
+- Avoid long concept explanations unless the word is actually functioning as a professional term.
+- Generate quick stem-reading drills using the words in context.
 
 If mistakes are mostly mechanism/sequence:
 - Rewrite the module logic as a chain.
