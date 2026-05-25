@@ -125,15 +125,10 @@ Chinese explanation of the module's main story.
 - 
 
 ## 8. Practice Questions
-1. English question stem
-   A. 
-   B. 
-   C. 
-   D. 
+Follow the practice-set layout below.
 
-## 9. Answers And Chinese Explanation
-1. Answer: 
-   Explanation:
+## 9. Answer Key and Explanations
+Follow the answer-key layout below.
 ```
 
 For non-programming modules, merge the examples/code-output section into core concepts or visual reconstruction. For Python/programming modules, keep it as a required section.
@@ -149,6 +144,67 @@ Use these types for Python/data courses:
 - Control flow: branch selected, loop count, break/continue effect.
 - Best choice: choose the most suitable data structure, chart type, or operation.
 - English wording: recognize stems such as `What is the output`, `Which statement is true`, `Which data structure is most appropriate`, and `What happens after this code runs`.
+
+## Practice Set Layout Template
+
+Use this layout when generating module practice questions or simulation sets:
+
+```markdown
+# Practice Questions: 稍难但高频
+
+> 做题方法
+>
+> 先自己选答案，再看答案解析。遇到代码输出题，请不要凭感觉，逐行写出变量变化。
+
+### 1. What is the value of `int(6.9)`?
+
+A. 6
+
+B. 7
+
+C. 6.9
+
+D. Error
+
+### 2. What is the result of `2 + 3 * 4 ** 2`?
+
+A. 50
+
+B. 80
+
+C. 400
+
+D. 64
+```
+
+Formatting rules:
+- Keep one question per block with clear spacing.
+- Use English stems by default for English MCQ exams.
+- Keep A-D options on separate lines.
+- Leave answers out of the question section.
+- For PDF/HTML rendering, use light blue or light gray question headers and a pale yellow method box when practical.
+- For Markdown-only output, headings and spacing are enough; do not overcomplicate the source.
+
+## Answer Key Layout Template
+
+Put this section after all questions, preferably after a page break when exporting to PDF:
+
+```markdown
+# Answer Key and Explanations
+
+| Q | Ans | Why |
+|---|---|---|
+| 1 | A | `int()` truncates the decimal part. |
+| 2 | A | `**` first, then `*`, then `+`: `4**2=16`, `3*16=48`, `2+48=50`. |
+| 3 | B | `==` tests equality; `=` assigns a value. |
+```
+
+Answer-key rules:
+- Use exactly `Q`, `Ans`, and `Why` as the core columns.
+- Keep explanations concise and directly tied to the tested rule.
+- Use English explanations for short programming rules when clear; add Chinese clarification for difficult concepts, professional terms, or recurring traps.
+- Preserve original question numbers so user answers, screenshots, mistake logs, and retests map cleanly.
+- Do not duplicate the full question in the answer table unless the user asks for a standalone answer sheet.
 
 ## Mistake Log Template
 
