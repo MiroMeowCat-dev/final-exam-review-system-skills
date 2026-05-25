@@ -155,8 +155,19 @@ Use these types for Python/data courses:
 ```markdown
 # Mistake Log
 
-| Date | Module | Question | Your answer | Correct answer | Tested point | Why wrong | Memory hook | Similar trap |
-|---|---|---|---|---|---|---|---|---|
+## Categories
+- Concept/definition
+- Mechanism/sequence
+- Comparison/confusion pair
+- Visual/graph/table/pathway/code screenshot
+- Code output/programming behavior
+- English stem wording
+- Professional terminology
+- Ordinary vocabulary
+- Careless/strategy
+
+| Date | Module | Category | Question | Your answer | Correct answer | Tested point | Why wrong | Repair action | Memory hook | Similar trap |
+|---|---|---|---|---|---|---|---|---|---|---|
 ```
 
 Add a same-type variant question after important mistakes when the user needs immediate retesting.
@@ -166,8 +177,23 @@ Add a same-type variant question after important mistakes when the user needs im
 ```markdown
 # Vocabulary Log
 
-| English term | 中文 | Exam reaction | Common context | Trap / memory hook |
-|---|---|---|---|---|
+## Professional Terms
+Use this section for course concepts and exam-tested terminology. Explain in detail.
+
+| Term | 中文 | Subject/category | Detailed explanation | Related concepts | Exam wording | Common trap | Memory hook |
+|---|---|---|---|---|---|---|---|
+
+## Ordinary Words
+Use this section for general English words. Keep explanations short.
+
+| Word | 常用含义 | Meaning in this question | Quick recognition cue |
+|---|---|---|---|
+
+## Exam-Stem Phrases
+Use this section for recurring test wording and instructions.
+
+| Phrase | 中文反应 | What to do in MCQs | Trap |
+|---|---|---|---|
 ```
 
 ## Teacher Style Template
