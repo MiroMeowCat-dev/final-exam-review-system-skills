@@ -77,7 +77,25 @@ For each module, produce a source Markdown file first, then export/render a PDF 
 - Visual reconstruction: summarize key figures as flow, relation, direction, contrast, or code/output behavior.
 - Examples: include worked examples when the module depends on application, especially Python code output, concept boundaries, and easy-mistake usage.
 - MCQ trap list: `NOT/except`, definition vs function, location, mechanism, sequence, comparison, cause-effect, code output, list/dict/array behavior, data-structure choice, chart choice, units, or graph interpretation.
-- Practice questions: mostly English single-choice MCQs when the exam is English, with answer and Chinese explanation.
+- Practice questions: mostly English single-choice MCQs when the exam is English; format the question sheet and answer key as separate sections.
+
+## Practice Question Formatting
+
+Default practice sets should match the user's preferred two-part layout:
+
+1. Question sheet first:
+   - Title as `Practice Questions: <difficulty/focus>`, for example `Practice Questions: 稍难但高频`.
+   - Add a short method box in Chinese before the questions, usually: `做题方法：先自己选答案，再看答案解析。遇到代码输出题，请不要凭感觉，逐行写出变量变化。`
+   - Put each question in its own lightly separated block with enough whitespace for handwritten answers.
+   - Use English question stems and vertical A-D options.
+   - Do not show the correct answer or explanation inside the question block.
+2. Answer key second:
+   - Put answers after all questions, ideally after a page break in PDF outputs.
+   - Title as `Answer Key and Explanations`.
+   - Use a compact table with exactly these core columns: `Q`, `Ans`, `Why`.
+   - Keep `Why` concise and rule-focused; for difficult or professional terms, add brief Chinese clarification only when needed.
+
+When the user sends handwritten/circled answers, preserve the original question numbers so answer checking and mistake logging can map back cleanly.
 
 Avoid these failure modes:
 
@@ -88,6 +106,7 @@ Avoid these failure modes:
 - Making only lookup tables without explanation.
 - Mechanically summarizing by slide page order.
 - Making notes too short to preserve exam logic.
+- Mixing answers into the practice question blocks before the user has attempted them.
 - Giving answers without logging mistakes and vocabulary.
 
 ## Practice And Feedback Loop
@@ -148,6 +167,7 @@ When producing PDFs:
 - Ensure Chinese, English, tables, question numbering, and answer sections render correctly.
 - Use clear headings, compact tables, and readable spacing.
 - Do not let large images dominate pages.
+- Keep practice questions and answer keys visually separate; preserve readable spacing for handwritten answers when printed.
 - Render-check the PDF when tools are available; fix garbled text, clipped tables, broken layout, or content that is too sparse.
 - Keep mistake logs separately exportable as PDFs so they can grow across modules and support final review.
 
