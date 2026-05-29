@@ -1,6 +1,6 @@
 ---
 name: final-exam-review-system
-description: Build a reusable final-exam review system from course materials. Use when Codex needs to read PPT/PDF/DOCX/images/handouts/exercises/code screenshots for a course, create a module-by-module review plan, generate bilingual Chinese-English study notes, produce exam-style MCQs, grade answers, maintain mistake and vocabulary logs, analyze teacher review-question style, and iteratively optimize review materials for different subjects including Python/programming courses.
+description: Build a reusable final-exam review system from course materials. Use when Codex needs to read PPT/PDF/DOCX/images/handouts/exercises/code screenshots for a course, create a module-by-module review plan, analyze review-part weights from knowledge count/importance/exam likelihood/user weakness, generate appropriately sized bilingual Chinese-English study notes, produce exam-style MCQs, grade answers, maintain mistake and vocabulary logs, analyze teacher review-question style, and iteratively optimize review materials for different subjects including Python/programming courses.
 ---
 
 # Final Exam Review System
@@ -60,16 +60,61 @@ Create a review plan only when the state check shows there is no usable plan, or
 2. Pacing: divide available days into knowledge-building, module practice, teacher-question practice, weak-point repair, and final simulation.
 3. Module plan: for each module, list source files, expected outputs, difficulty, and what must be practiced.
 4. Subject priority: for Python/programming modules, explicitly plan concept understanding, code-output practice, easy-error repair, and data-structure/chart-selection questions.
-5. Compression rule: make early modules more explanatory when the user's logic is not established; make later review increasingly focused on teacher style, mistakes, and high-yield traps.
-6. Continuation rule: mark completed, in-progress, and pending tasks so future sessions can resume without re-planning.
+5. Adaptive review weighting: estimate each module/section/subtopic's value and workload before deciding output volume.
+6. Compression rule: make early modules more explanatory when the user's logic is not established; make later review increasingly focused on teacher style, mistakes, and high-yield traps.
+7. Continuation rule: mark completed, in-progress, and pending tasks so future sessions can resume without re-planning.
 
 Read `references/course-adaptation-and-templates.md` when adapting the workflow to a specific subject or when the user asks for concrete output templates.
+
+## Adaptive Review Weighting And Workload Allocation
+
+Before generating detailed notes or questions, evaluate each review part at the module, session, and subtopic level. Use the result to decide explanation depth, table/detail density, visual reconstruction, examples, question count, and PDF space. Do not give every part the same length by default.
+
+Use four scoring groups:
+
+1. Content value: knowledge-point count, concept complexity, mechanism/sequence length, comparison density, professional-term load, visual/data/code density, and dependency on later topics.
+2. Exam value: teacher emphasis, learning objectives, summary slides, teacher review-question frequency, fit with English MCQs, likely stem types, distractor potential, and match with observed teacher style.
+3. Personal risk: wrong answers, circled uncertainty, unknown professional terms, ordinary vocabulary blocking comprehension, slow response, repeated confusion, and low confidence.
+4. Environment and schedule: days remaining, available study time, completion rate, remaining weighted workload, current phase, deadline pressure, and whether the user is ahead of or behind the plan.
+
+Add subject-specific dimensions after the base groups. Examples:
+
+- Python/programming: code-output risk, mutation vs reassignment, final variable state, index/slice/boundary risk, data structure choice, chart choice, and error prediction.
+- Life science/medicine/psychology: pathway order, receptor/region/function matching, arrow direction, hormone/ion/signal flow, anatomy map risk, and mechanism-vs-location traps.
+- Statistics/data/quantitative courses: formula conditions, assumption checks, unit/variable meaning, graph interpretation, correlation vs causation, and calculation trap density.
+- Humanities/business/social science: concept boundary, theory/framework comparison, case matching, chronology, named model use, and scenario-application risk.
+- Language-heavy courses: term recognition, false friends, stem phrase recognition, definition boundary, and ordinary-vs-professional word ambiguity.
+
+Use fine-grained tiers instead of only high/medium/low:
+
+- `S+` absolute core: must be detailed, frequently tested, fragile, or repeatedly wrong.
+- `S` high-frequency core: detailed notes, multiple examples, and many MCQs.
+- `A` high value: solid explanation, key traps, and required practice.
+- `B+` medium-high value: focused explanation with representative traps.
+- `B` standard value: normal coverage and a small question set.
+- `C` low value: compact explanation, essential keywords only.
+- `D` skim: one or two sentences, usually no questions.
+- `X` skip/defer: omit unless needed for context or the user asks.
+
+Use schedule-aware workload allocation:
+
+- If time is sufficient and progress is on track, cover `S+`, `S`, and `A` fully, keep `B+/B` standard, compress `C`, and skim `D`.
+- If time is sufficient but mistakes are concentrated, increase personal-risk weight and expand weak `A/B+` topics.
+- If time is tight or the plan is behind, expand only `S+`, `S`, and urgent `A`; compress `B+/B`; skip most `C/D`.
+- If teacher review questions are available, raise exam-value weight and prioritize topics matching teacher style.
+- If knowledge review is mostly complete, reduce long explanations and shift workload toward practice, mistakes, vocabulary, and simulation.
+- If the user is in final review mode, prioritize `S+`, `S`, teacher-style traps, wrong-question clusters, professional terms, and English stem phrases.
+
+When mentioning or revising time arrangements, compare completed work against remaining weighted workload. Adjust the next workload, not just the calendar. For example, if 40% of time remains but 70% of weighted work remains, compress lower tiers and move immediately to high-yield notes, teacher-style questions, and mistake repair.
+
+Never let slide count alone decide weight. A short section with teacher emphasis, high trap density, strong dependency, or repeated mistakes can be `S+`; a long section marked `details not important` can be `C`, `D`, or `X`.
 
 ## Module Output
 
 For each module, produce a source Markdown file first, then export/render a PDF if requested or expected. Each module should usually include:
 
 - Module logic map: the story of the module, not a slide-by-slide list.
+- Weight rationale: why each major part is `S+` through `X`, and how that affects generated material, question count, and time allocation.
 - Core concepts: Chinese explanations with retained English definitions or keywords.
 - English keyword table: English term, Chinese meaning, exam reaction, and common trap.
 - Mechanism/sequence chain: `stimulus -> transduction -> pathway -> processing -> output`, or the course-specific equivalent.
@@ -105,6 +150,7 @@ Avoid these failure modes:
 - Writing all-English notes when the user needs Chinese explanation.
 - Making only lookup tables without explanation.
 - Mechanically summarizing by slide page order.
+- Giving equal space to low-weight and high-weight sections.
 - Making notes too short to preserve exam logic.
 - Mixing answers into the practice question blocks before the user has attempted them.
 - Giving answers without logging mistakes and vocabulary.
