@@ -7,6 +7,7 @@ Use this reference when the user wants the review system to keep improving acros
 After each module or practice round, update:
 
 - `review-plan.md`: current phase, current module, completed/pending task states, and next action.
+- Review weights: adjust `S+` through `X` labels when teacher questions, mistakes, vocabulary problems, new materials, completion rate, or remaining time change the expected exam value.
 - `mistake-log.md`: wrong question, wrong answer, correct answer, tested point, why wrong, memory hook, and similar trap.
 - `vocab-log.md`: classified professional terms, ordinary words, and exam-stem phrases with the right explanation depth.
 - `weak-points.md`: weak concept, evidence, repair action, and retest date.
@@ -14,6 +15,62 @@ After each module or practice round, update:
 - `evolution-notes.md`: what should change in the next module's notes or practice questions.
 
 Do not rebuild the whole review plan after every practice round. Update only the status fields and next action unless the user's deadline, scope, teacher hints, or available materials changed.
+
+## Weight Adjustment Rules
+
+Increase a section's weight when:
+- Teacher review questions repeatedly test it.
+- The user makes repeated mistakes or marks low confidence.
+- It connects multiple later topics.
+- It contains high-yield diagrams, code-output patterns, mechanisms, formulas, or comparison traps.
+- It has many professional terms that block question comprehension.
+- It becomes more valuable because the exam is close and it has high time return.
+
+Decrease a section's weight when:
+- Teacher explicitly marks it as not important or detail-only.
+- It is mostly background and rarely appears in review questions.
+- The user already answers it reliably and time is short.
+- It has many slides but few testable concepts.
+- It is lower yield than remaining unfinished `S+`, `S`, or `A` topics.
+
+When weights change, adjust output volume immediately:
+- `S+` or `S`: expand notes and practice unless already mastered.
+- `A` or `B+`: keep useful coverage, but compress if behind schedule.
+- `B` or `C`: compress when time is limited.
+- `D`: mention only.
+- `X`: skip or defer.
+
+## Environment And Schedule Rebalancing
+
+Recalculate workload whenever the user resumes, finishes a module, sends answers, adds teacher review questions, or changes the deadline.
+
+Check:
+- Days and hours remaining.
+- Completed modules and generated PDFs.
+- Remaining modules and their tier distribution.
+- Mistake repair still pending.
+- Vocabulary load, especially professional terms.
+- Whether the current phase is knowledge building, module practice, teacher-question practice, weak-point repair, simulation, or final review.
+
+If the user is ahead of schedule:
+- Keep explanatory depth for `S+`, `S`, and `A`.
+- Add deeper examples or challenge questions for persistent weak points.
+
+If the user is on track:
+- Follow the normal tier workload table.
+- Keep the next action narrow and concrete.
+
+If the user is behind schedule:
+- Compress `B+/B/C`.
+- Drop most `D/X`.
+- Move quickly from notes to practice for `S+`, `S`, and urgent `A`.
+- Prioritize teacher-style questions and mistake repair over broad rereading.
+
+If the user is in final emergency mode:
+- Stop expanding new low-tier notes.
+- Build a compressed pack from `S+`, `S`, wrong questions, professional terms, English stem traps, and teacher review-question patterns.
+
+When changing a time plan, explicitly state what workload was reduced or expanded and why.
 
 ## Review Adjustment Rules
 
