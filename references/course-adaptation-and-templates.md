@@ -238,11 +238,11 @@ D. Error
 
 ### 2. What is the result of `2 + 3 * 4 ** 2`?
 
-A. 50
+A. 80
 
-B. 80
+B. 400
 
-C. 400
+C. 50
 
 D. 64
 ```
@@ -252,8 +252,26 @@ Formatting rules:
 - Use English stems by default for English MCQ exams.
 - Keep A-D options on separate lines.
 - Leave answers out of the question section.
+- Balance correct-answer positions across `A/B/C/D`; do not let `A` dominate.
 - For PDF/HTML rendering, use light blue or light gray question headers and a pale yellow method box when practical.
 - For Markdown-only output, headings and spacing are enough; do not overcomplicate the source.
+
+## Answer Distribution Rules
+
+Before publishing a practice set, inspect the answer key:
+
+- 8+ questions: `A/B/C/D` counts should be as even as possible, usually no option more than 1 above another.
+- 4-7 questions: use at least three different correct-answer letters; avoid any one letter appearing more than twice.
+- 1-3 questions: avoid repeated use of the same answer letter across nearby mini-sets.
+- No obvious sequence patterns such as all `A`, long runs of one letter, or repeating `A/B/C/D`.
+- No run of the same answer letter should be longer than 2 unless there is a strong reason.
+
+Balancing method:
+1. First write questions for concept quality.
+2. Build the answer key and count `A/B/C/D`.
+3. If one option dominates, reorder choices or replace weak distractors while keeping the tested concept intact.
+4. Re-check that each `Ans` letter and `Why` explanation match the final option order.
+5. If the set intentionally violates balance because of imported teacher questions, state that it is preserving the source distribution.
 
 ## Answer Key Layout Template
 
@@ -265,8 +283,9 @@ Put this section after all questions, preferably after a page break when exporti
 | Q | Ans | Why |
 |---|---|---|
 | 1 | A | `int()` truncates the decimal part. |
-| 2 | A | `**` first, then `*`, then `+`: `4**2=16`, `3*16=48`, `2+48=50`. |
+| 2 | C | `**` first, then `*`, then `+`: `4**2=16`, `3*16=48`, `2+48=50`. |
 | 3 | B | `==` tests equality; `=` assigns a value. |
+| 4 | D | A list of length 4 has valid indices 0 to 3. |
 ```
 
 Answer-key rules:
@@ -275,6 +294,7 @@ Answer-key rules:
 - Use English explanations for short programming rules when clear; add Chinese clarification for difficult concepts, professional terms, or recurring traps.
 - Preserve original question numbers so user answers, screenshots, mistake logs, and retests map cleanly.
 - Do not duplicate the full question in the answer table unless the user asks for a standalone answer sheet.
+- Include an internal answer-distribution check before final output; do not show the check unless useful.
 
 ## Mistake Log Template
 
