@@ -142,6 +142,10 @@ Default practice sets should match the user's preferred two-part layout:
 
 When the user sends handwritten/circled answers, preserve the original question numbers so answer checking and mistake logging can map back cleanly.
 
+Before finalizing any multiple-choice set, check answer distribution. Do not let the correct answers cluster around `A` or any other single option. For 8 or more questions, keep `A/B/C/D` counts as even as possible, usually within 1 question of each other. For 4-7 questions, use at least three different correct-answer letters and avoid any letter appearing more than twice unless the concept genuinely requires it. Avoid obvious patterns such as `A A A`, `A B C D A B C D`, or making the first question always `A`.
+
+If the answer key is imbalanced, rewrite the options and distractor order while preserving the tested concept and the correctness of the explanation. Never change the correct answer only to satisfy balance; change option order, create cleaner distractors, or replace a question with an equivalent one. After balancing, re-check that each `Why` explanation still matches the new answer letter.
+
 Avoid these failure modes:
 
 - Only reading text and missing figures.
@@ -154,6 +158,7 @@ Avoid these failure modes:
 - Making notes too short to preserve exam logic.
 - Mixing answers into the practice question blocks before the user has attempted them.
 - Giving answers without logging mistakes and vocabulary.
+- Producing answer keys where `A` or another option appears too often.
 
 ## Practice And Feedback Loop
 
