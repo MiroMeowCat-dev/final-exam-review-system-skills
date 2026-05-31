@@ -13,6 +13,7 @@ After each module or practice round, update:
 - `weak-points.md`: weak concept, evidence, repair action, and retest date.
 - `teacher-style.md`: recurring stem wording, distractor design, repeated knowledge areas, and difficulty.
 - `evolution-notes.md`: what should change in the next module's notes or practice questions.
+- Practice quality: answer distribution, distractor quality, repeated answer-letter bias, and whether explanations still match the final option order.
 
 Do not rebuild the whole review plan after every practice round. Update only the status fields and next action unless the user's deadline, scope, teacher hints, or available materials changed.
 
@@ -117,6 +118,13 @@ If mistakes come from `NOT`, `except`, or wording:
 - Mark negative wording clearly in explanations.
 - Include distractor diagnosis.
 
+If generated practice questions show answer-letter bias:
+- Count `A/B/C/D` in the answer key before releasing the next set.
+- Reorder options so correct answers are distributed more evenly.
+- Improve weak distractors instead of moving the correct concept into a confusing or inaccurate option.
+- Avoid long runs and predictable patterns.
+- Re-check the answer key after balancing so the `Ans` column and `Why` explanation still agree.
+
 If the user is running out of time:
 - Compress new notes.
 - Prioritize teacher style, mistakes, high-yield traps, and simulation.
@@ -140,6 +148,7 @@ Examples of reusable lessons:
 - The user consistently struggles with English stems, so the default module template should include more stem-recognition practice.
 - Teacher review questions reveal a recurring distractor style that should influence simulation generation.
 - Python modules reveal repeated code-output misses, so future programming modules should include more examples before the practice set.
+- Generated practice sets reveal answer-position bias, so future sets need answer-distribution checks before release.
 
 ## Retest Pattern
 
